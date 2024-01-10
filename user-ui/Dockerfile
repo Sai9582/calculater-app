@@ -1,8 +1,6 @@
-FROM ubuntu
-USER root
-RUN apt update -y \
-    && apt install nodejs -y \
-    && apt install npm -y
+FROM node:14
+WORKDIR '/app'
+COPY pcakge.json .
+RUN npm install -y
 COPY . .
-RUN chmod -R 777 cal
-ENTRYPOINT ["npm", "run", "start"]
+CMD  ["npm","start"]
