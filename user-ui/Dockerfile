@@ -1,6 +1,6 @@
 FROM node:14
 WORKDIR '/app'
-COPY pcakge.json .
+COPY package.json .
 RUN npm install -y
 COPY . .
 CMD  ["npm","start"]
